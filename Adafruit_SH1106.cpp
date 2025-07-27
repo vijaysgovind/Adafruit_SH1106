@@ -386,7 +386,8 @@
     // The cursor values will be used to "hardcode" the initial value of the scroll
     // TODO: Use Adfruit_GFX methods to get the cursorX and cursorY position locally as
     // Adafruit_SH1106 implements Adafruit_GFX
-    //
+    // 1. Use the current cursor position to set the initial scroll position
+    // 2. Get the initial framebuffer information to understand what to scroll
     void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop){
         if (start > SH1106_LCDWIDTH || stop > SH1106_LCDWIDTH) {
             start = SH1106_LCDWIDTH;
