@@ -379,27 +379,31 @@
     }
     }
 
-    // // startscrollright
-    // // Activate a right handed scroll for rows start through stop
-    // // The start row should be between 0 and < SH1106_LCDWIDTH
-    // // The stop row should be between 0 and SH1106_LCDWIDTH
-    // // The cursor values will be used to "hardcode" the initial value of the scroll
-    // void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t cursor_y){
-    //     if (start > SH1106_LCDWIDTH || stop > SH1106_LCDWIDTH) {
-    //         start = SH1106_LCDWIDTH;
-    //         stop = SH1106_LCDWIDTH;
-    //     }
+    // startscrollright
+    // Activate a right handed scroll for rows start through stop
+    // The start row should be between 0 and < SH1106_LCDWIDTH
+    // The stop row should be between 0 and SH1106_LCDWIDTH
+    // The cursor values will be used to "hardcode" the initial value of the scroll
+    // TODO: Use Adfruit_GFX methods to get the cursorX and cursorY position locally as
+    // Adafruit_SH1106 implements Adafruit_GFX
+    //
+    void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop){
+        if (start > SH1106_LCDWIDTH || stop > SH1106_LCDWIDTH) {
+            start = SH1106_LCDWIDTH;
+            stop = SH1106_LCDWIDTH;
+        }
 
-    //     if (start == stop) return;
+        if (start == stop) return;
 
-    //     if (start > stop) {
-    //         uint8_t temp = start;
-    //         start = stop;
-    //         stop = temp;
-    //     }
+        // swap start and stop if start > stop
+        if (start > stop) {
+            uint8_t temp = start;
+            start = stop;
+            stop = temp;
+        }
 
-    //     return;
-    // }
+        return;
+    }
 
     // // startscrollleft
     // // Activate a right handed scroll for rows start through stop

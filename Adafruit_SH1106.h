@@ -150,7 +150,7 @@ void invertDisplay(uint8_t i);
 void display();
 
 // Implement scrolll using software - the hacky way. Need to add variables in to the class public area
-// void startscrollright(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t cursor_y);
+void startscrollright(uint8_t start, uint8_t stop);
 // void startscrollleft(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t cursor_y);
 // void startscrolldiagright(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t cursor_y);
 // void startscrolldiagleft(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t cursor_y);
