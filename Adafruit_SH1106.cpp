@@ -427,8 +427,11 @@ void Adafruit_SH1106::sh1106_command(uint8_t c) {
 // 1. Use the current cursor position to set the initial scroll position
 // 2. Get the initial framebuffer information to understand what to scroll
 void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop) {
-  if (start > SH1106_LCDWIDTH || stop > SH1106_LCDWIDTH) {
+  if (start > SH1106_LCDWIDTH) {
     start = SH1106_LCDWIDTH;
+  }
+
+  if (stop > SH1106_LCDWIDTH) {
     stop = SH1106_LCDWIDTH;
   }
 
@@ -445,63 +448,72 @@ void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop) {
   return;
 }
 
-// // startscrollleft
-// // Activate a right handed scroll for rows start through stop
-// void Adafruit_SH1106::startscrollleft(uint8_t start, uint8_t stop, uint8_t
-// cursor_x, uint8_t cursor_y){
-//     if (start > SH1106_LCDWIDTH || stop > SH1106_LCDWIDTH) {
-//         start = SH1106_LCDWIDTH;
-//         stop = SH1106_LCDWIDTH;
-//     }
+// startscrollleft
+// Activate a right handed scroll for rows start through stop
+// @ placeholder code
+void Adafruit_SH1106::startscrollleft(uint8_t start, uint8_t stop) {
+  if (start > SH1106_LCDWIDTH) {
+    start = SH1106_LCDWIDTH;
+  }
 
-//     if (start == stop) return;
+  if (stop > SH1106_LCDWIDTH) {
+    stop = SH1106_LCDWIDTH;
+  }
 
-//     if (start < stop) {
-//         uint8_t temp = start;
-//         start = stop;
-//         stop = temp;
-//     }
-//     return;
-// }
+  if (start == stop)
+    return;
 
-// // startscrolldiagright
-// // Activate a diagonal scroll for rows start through stop
-// void Adafruit_SH1106::startscrolldiagright(uint8_t start, uint8_t stop,
-// uint8_t cursor_x, uint8_t cursor_y){
-//     if (start > SH1106_LCDHEIGHT || stop > SH1106_LCDHEIGHT) {
-//         start = SH1106_LCDHEIGHT;
-//         stop = SH1106_LCDHEIGHT;
-//     }
+  if (start < stop) {
+    uint8_t temp = start;
+    start = stop;
+    stop = temp;
+  }
+  return;
+}
 
-//     if (start == stop) return;
+// startscrolldiagright
+// Activate a diagonal scroll for rows start through stop
+// @ placeholder code
+void Adafruit_SH1106::startscrolldiagright(uint8_t start, uint8_t stop) {
+  if (start > SH1106_LCDWIDTH) {
+    start = SH1106_LCDWIDTH;
+  }
 
-//     if (start > stop) {
-//         uint8_t temp = start;
-//         start = stop;
-//         stop = temp;
-//     }
+  if (stop > SH1106_LCDWIDTH) {
+    stop = SH1106_LCDWIDTH;
+  }
 
-//     return;
-// }
+  if (start == stop)
+    return;
 
-// // startscrolldiagleft
-// // Activate a diagonal scroll for rows start through stop
-// void Adafruit_SH1106::startscrolldiagleft(uint8_t start, uint8_t stop,
-// uint8_t cursor_x, uint8_t cursor_y){
-//     if (start > SH1106_LCDHEIGHT || stop > SH1106_LCDHEIGHT) {
-//         start = SH1106_LCDHEIGHT;
-//         stop = SH1106_LCDHEIGHT;
-//     }
+  if (start > stop) {
+    uint8_t temp = start;
+    start = stop;
+    stop = temp;
+  }
 
-//     if (start == stop)
-//     return;
+  return;
+}
 
-//     return;
-// }
+// startscrolldiagleft
+// Activate a diagonal scroll for rows start through stop
+// @ placeholder code
+void Adafruit_SH1106::startscrolldiagleft(uint8_t start, uint8_t stop) {
+  if (start > SH1106_LCDWIDTH) {
+    start = SH1106_LCDWIDTH;
+  }
 
-// void Adafruit_SH1106::stopscroll(uint8_t cursor_x, uint8_t cursor_y){
-//     return;
-// }
+  if (stop > SH1106_LCDWIDTH) {
+    stop = SH1106_LCDWIDTH;
+  }
+
+  if (start == stop)
+    return;
+
+  return;
+}
+
+void Adafruit_SH1106::stopscroll(uint8_t cursor_x, uint8_t cursor_y) { return; }
 
 // Dim the display
 // dim = true: display is dimmed
