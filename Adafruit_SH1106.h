@@ -125,13 +125,14 @@ typedef uint8_t PortMask;
 // Scrolling #defines
 // Removed as SH1106 Controller has no inbuilt scrolling capabilities
 // These capabilities will be implemented in software by bakamenon
-// #define SH1106_ACTIVATE_SCROLL 0x2F // 0010 1111
-// #define SH1106_DEACTIVATE_SCROLL 0x2E // 0010 1110
-// #define SH1106_SET_VERTICAL_SCROLL_AREA 0xA3
-// #define SH1106_RIGHT_HORIZONTAL_SCROLL 0x26 // 0010 0110
-// #define SH1106_LEFT_HORIZONTAL_SCROLL 0x27 // 0010 0111
-// #define SH1106_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
-// #define SH1106_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL 0x2A
+// Adding back in for placeholder
+#define SH1106_ACTIVATE_SCROLL 0x2F   // 0010 1111
+#define SH1106_DEACTIVATE_SCROLL 0x2E // 0010 1110
+#define SH1106_SET_VERTICAL_SCROLL_AREA 0xA3
+#define SH1106_RIGHT_HORIZONTAL_SCROLL 0x26 // 0010 0110
+#define SH1106_LEFT_HORIZONTAL_SCROLL 0x27  // 0010 0111
+#define SH1106_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
+#define SH1106_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL 0x2A
 
 class Adafruit_SH1106 : public Adafruit_GFX {
 public:
@@ -153,11 +154,10 @@ public:
   // Implement scrolll using software - the hacky way. Need to add variables in
   // to the class public area
   void startscrollright(uint8_t start, uint8_t stop);
-  // void startscrollleft(uint8_t start, uint8_t stop, uint8_t cursor_x, uint8_t
-  // cursor_y); void startscrolldiagright(uint8_t start, uint8_t stop, uint8_t
-  // cursor_x, uint8_t cursor_y); void startscrolldiagleft(uint8_t start,
-  // uint8_t stop, uint8_t cursor_x, uint8_t cursor_y); void stopscroll(uint8_t
-  // cursor_x, uint8_t cursor_y);
+  void startscrollleft(uint8_t start, uint8_t stop);
+  void startscrolldiagright(uint8_t start, uint8_t stop);
+  void startscrolldiagleft(uint8_t start, uint8_t stop);
+  void stopscroll();
 
   void dim(boolean dim);
 

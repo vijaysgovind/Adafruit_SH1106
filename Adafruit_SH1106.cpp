@@ -513,7 +513,8 @@ void Adafruit_SH1106::startscrolldiagleft(uint8_t start, uint8_t stop) {
   return;
 }
 
-void Adafruit_SH1106::stopscroll(uint8_t cursor_x, uint8_t cursor_y) { return; }
+// @placeholder
+void Adafruit_SH1106::stopscroll() { return; }
 
 // Dim the display
 // dim = true: display is dimmed
