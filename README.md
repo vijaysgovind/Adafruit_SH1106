@@ -4,10 +4,10 @@
 - Add scroll function in software (WIP - Thinking in progress)
 - Copyright belongs to Adafruit
 - Not production ready - Using this to learn uc coding as way to get over mental fatigue
-- Will be committing everything to main branch as the guy behind this is lazy 
+- Will be committing everything to main branch as the guy behind this is lazy
 
-## Notes 
-- I am using a 38 PIN ESP32 For testing the scketches and in my case I got the SH1106 OLED to work using the following SDA and SCL/SCK configurations. 
+## Notes
+- I am using a 38 PIN ESP32 For testing the scketches and in my case I got the SH1106 OLED to work using the following SDA and SCL/SCK configurations.
 ```c
 #define OLED_SDA 27
 #define OLED_SCL 26
