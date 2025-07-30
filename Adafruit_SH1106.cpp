@@ -425,7 +425,7 @@ void Adafruit_SH1106::sh1106_command(uint8_t c) {
 // TODO: Use Adfruit_GFX methods to get the cursorX and cursorY position locally
 // as Adafruit_SH1106 implements Adafruit_GFX
 // 1. Use the current cursor position to set the initial scroll position
-// 2. Get the initial framebuffer information to understand what to scroll
+// 2. Get the initial framebuffer [buffer]? information to understand what to scroll
 void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop) {
   if (start > SH1106_LCDWIDTH) {
     start = SH1106_LCDWIDTH;
@@ -440,9 +440,7 @@ void Adafruit_SH1106::startscrollright(uint8_t start, uint8_t stop) {
 
   // swap start and stop if start > stop
   if (start > stop) {
-    uint8_t temp = start;
-    start = stop;
-    stop = temp;
+    swap(start, stop);
   }
 
   return;
@@ -464,10 +462,9 @@ void Adafruit_SH1106::startscrollleft(uint8_t start, uint8_t stop) {
     return;
 
   if (start < stop) {
-    uint8_t temp = start;
-    start = stop;
-    stop = temp;
+    swap(start, stop);
   }
+
   return;
 }
 
@@ -487,9 +484,7 @@ void Adafruit_SH1106::startscrolldiagright(uint8_t start, uint8_t stop) {
     return;
 
   if (start > stop) {
-    uint8_t temp = start;
-    start = stop;
-    stop = temp;
+    swap(start, stop);
   }
 
   return;
@@ -509,6 +504,10 @@ void Adafruit_SH1106::startscrolldiagleft(uint8_t start, uint8_t stop) {
 
   if (start == stop)
     return;
+
+  if (stop > start) {
+    swap(start, stop);
+  }
 
   return;
 }
