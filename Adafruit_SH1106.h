@@ -123,16 +123,14 @@ typedef uint8_t PortMask;
 #define SH1106_SWITCHCAPVCC 0x2
 
 // Scrolling #defines
-// Removed as SH1106 Controller has no inbuilt scrolling capabilities
 // These capabilities will be implemented in software by bakamenon
-// Adding back in for placeholder
 #define SH1106_ACTIVATE_SCROLL 0x2F   // 0010 1111
 #define SH1106_DEACTIVATE_SCROLL 0x2E // 0010 1110
-#define SH1106_SET_VERTICAL_SCROLL_AREA 0xA3
+#define SH1106_SET_VERTICAL_SCROLL_AREA 0xA3 // 1010 0011
 #define SH1106_RIGHT_HORIZONTAL_SCROLL 0x26 // 0010 0110
 #define SH1106_LEFT_HORIZONTAL_SCROLL 0x27  // 0010 0111
-#define SH1106_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
-#define SH1106_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL 0x2A
+#define SH1106_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29 // 1010 1001
+#define SH1106_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL 0x2A // 1010 1010
 
 class Adafruit_SH1106 : public Adafruit_GFX {
 public:
